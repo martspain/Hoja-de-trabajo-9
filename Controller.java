@@ -22,6 +22,9 @@ import java.io.IOException;
 
 public class Controller{
 	
+	Mapping<String, String> tree; //Es el mapa utilizado
+	
+	
 	public void runProgram(){
 		boolean active = true;
 		Scanner screen = new Scanner(System.in);
@@ -36,9 +39,27 @@ public class Controller{
 				
 				if(decision == 1){
 					
-					System.out.println("");
+					System.out.println("Que implementacion desea utilizar? \n1. HashMap \n2. Red Black Tree ");
 					
-					this.readDictionary();
+					try{
+						int decision_two = screen.nextInt();
+						
+						if(decision_two == 1){
+							this.createInstance(1);
+						}
+						else if(decision_two == 2){
+							this.createInstance(2);
+						}
+						else{
+							System.out.println("Debe ingresar una implementacion valida ");
+						}
+						
+						this.readDictionary(); //Esto lee el archivo de texto y guarda las palabras en la implementacion seleccionada (HashMap tree por default)
+					}
+					
+					catch(Exception e){
+						System.out.println("Debe ingresar un numero...");
+					}
 					
 				}
 				else if(decision == 2){
@@ -89,7 +110,7 @@ public class Controller{
 					
 				}
 				
-				Association pair = new Association(english, translation);
+				Association<String, String> pair = new Association(english, translation);
 				this.saveWord(pair);
 			}
 		}
@@ -98,16 +119,31 @@ public class Controller{
 		}
 	}
 	
-	public void saveWord(Association link){
-		
+	public void saveWord(Association<String,String> link){
+		tree.put(link);
 	}
 	
 	public void readTranslation(){
+		File document = new File("texto.txt");
 		
+		try{
+			Scanner reader2 = new Scanner(document);
+			
+			
+		}
+		catch(Exception e){
+			
+		}
 	}
 	
-	public void createInstance(){
-		//Aqui se utiliza el factory
+	public void createInstance(int flag){
+		Factory creator = new Factory();
+		if(flag == 1){ //Se utiliza hash map
+			tree = creator.getMapping("HashMap");
+		}
+		else if(flag == 2){ //Se utiliza rdt
+			tree = creator.getMapping("RedBlackTree");
+		}
 	}
 	
 }
