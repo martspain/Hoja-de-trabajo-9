@@ -1,9 +1,8 @@
-//import java.util.HashMap;
+
 
 public class SplayTreeMapping<K extends Comparable<K>, V> implements Mapping<K, V> {
     Association<K,V> assoc;
     private final SplayTree<K,V> tree;
-    //private HashMap<K,V> map;
 
     public SplayTreeMapping() {
         this.tree = new SplayTree<K,V>();
