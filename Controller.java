@@ -32,7 +32,7 @@ public class Controller{
 		System.out.println("Bienvenid@ al diccionario UVG!");
 		
 		while(active){
-			System.out.println("###### Menu ###### \nQue desea hacer? \n1. Traducir el texto \n2. Salir ");
+			System.out.println("\n \n###### Menu ###### \nQue desea hacer? \n1. Traducir el texto \n2. Salir ");
 			
 			try{
 				int decision = screen.nextInt();
@@ -56,7 +56,7 @@ public class Controller{
 						
 						this.readDictionary(); //Esto lee el archivo de texto y guarda las palabras en la implementacion seleccionada (HashMap tree por default)
 						
-						this.readTranslation();
+						this.readTranslation(); //Esto traduce la informacion utilizando el tree implementado y muestra el resultado en pantalla
 						
 					}
 					
@@ -85,7 +85,7 @@ public class Controller{
 	}
 	
 	public void readDictionary(){
-		File file = new File("Spanish.txt");
+		File file = new File("Spanish.txt"); //Nombre del archivo que contiene los datos del diccionario
 		
 		try{
 			Scanner reader = new Scanner(file);
@@ -129,7 +129,9 @@ public class Controller{
 	}
 	
 	public void readTranslation(){
-		File document = new File("texto.txt");
+		File document = new File("texto.txt"); //Nombre del archivo del cual se va a traducir
+		
+		System.out.println("\n");
 		
 		try{
 			Scanner reader = new Scanner(document);
@@ -142,12 +144,16 @@ public class Controller{
 				words = line.split(" ");
 				
 				for(int i = 0; i < words.length; i++){
-					if(tree.searchValue(words[i])){
-						translated = tree.get(words[i]);
+					String key = words[i];
+					key = key.toLowerCase();
+					
+					if(tree.searchValue(key)){
+						translated = tree.get(key);
 					}
 					else{
-						translated = "*" + words[i] + "*";
+						translated = "*" + key + "*";
 					}
+					
 					System.out.print(translated + " ");
 				}
 				System.out.print("\n");
