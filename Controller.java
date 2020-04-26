@@ -38,7 +38,7 @@ public class Controller{
 				
 				if(decision == 1){
 					
-					System.out.println("Que implementacion desea utilizar? \n1. HashMap \n2. Red Black Tree ");
+					System.out.println("Que implementacion desea utilizar? \n1. HashMap \n2. SplayTree ");
 					
 					try{
 						int decision_two = screen.nextInt();
@@ -182,7 +182,7 @@ public class Controller{
 			tree = creator.getMapping("HashMap");
 		}
 		else if(flag == 2){ //Se utiliza rdt
-			tree = creator.getMapping("RedBlackTree");
+			tree = creator.getMapping("SplayTree");
 		}
 	}
 	

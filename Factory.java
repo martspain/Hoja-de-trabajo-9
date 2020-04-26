@@ -22,8 +22,8 @@ public class Factory{
             return new Hashing<String,String>();
         }
         
-        else if(type.equals("RedBlackTree")){
-            return new RedBlackTree<String,String>();
+        else if(type.equals("SplayTree")){
+            return new SplayTree();
         }
         
         System.out.println("-Se ha ingresado un valor no valido, por favor ingresar de nuevo...");
