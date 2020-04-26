@@ -3,7 +3,7 @@
  * Algoritmos y Estructuras de Datos
  * Sección: 30
  * Fecha de entrega: 27/04/2020
- * Clase Controller
+ * Clase Association
  * Autores:
 	Hansel López	carné: 19026 
 	Martin España 	carné: 19258
