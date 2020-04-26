@@ -13,35 +13,6 @@
 import java.util.Scanner;
 
 public class Driver{
-	/*
-	public static void main(String[] args){
-		
-		Scanner sc = new Scanner(System.in);
-		Factory factory = new Factory();
-		Mapping<String, String> mapping = null;
-		String input = null;
-
-		//Imprimiendo opciones de mapping
-		System.out.println("________________________________________________________--");
-    	System.out.println("                 Hoja de Trabajo 6");
-    	System.out.println("________________________________________________________--\n");
-    	System.out.println("Que implementacion desea utilizar para traducir: \n");
-		System.out.println("Escribir: 'HashMap' o 'RedBlackTree'");
-		
-		while(mapping == null){
-			input = sc.nextLine();		
-			mapping = factory.getMapping(input);//Instanciando Mapping elegido por medio patron factory
-		}
-
-		if(mapping.isHashing()){
-			//Hashing code to translate here
-		}else{
-			//RedBlackTree code to translate here
-		}
-
-	}
-	*/
-	
 	public static void main(String[] args){
 		Controller console = new Controller();
 		console.runProgram();
