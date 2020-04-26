@@ -55,11 +55,16 @@ public class Controller{
 						}
 						
 						this.readDictionary(); //Esto lee el archivo de texto y guarda las palabras en la implementacion seleccionada (HashMap tree por default)
+						
+						this.readTranslation();
+						
 					}
 					
 					catch(Exception e){
-						System.out.println("Debe ingresar un numero...");
+						System.out.println("Ocurrio un error, revise haber ingresado los datos correctamente.");
 					}
+					
+					
 					
 				}
 				else if(decision == 2){
@@ -110,7 +115,7 @@ public class Controller{
 					
 				}
 				
-				Association<String, String> pair = new Association(english, translation);
+				Association<String, String> pair = new Association<String, String>(english, translation);
 				this.saveWord(pair);
 			}
 		}
@@ -127,9 +132,27 @@ public class Controller{
 		File document = new File("texto.txt");
 		
 		try{
-			Scanner reader2 = new Scanner(document);
+			Scanner reader = new Scanner(document);
 			
-			
+			while(reader.hasNext()){
+				String line = reader.nextLine();
+				String[] words;
+				String translated = "";
+				
+				words = line.split(" ");
+				
+				for(int i = 0; i < words.length; i++){
+					if(tree.searchValue(words[i])){
+						translated = tree.get(words[i]);
+					}
+					else{
+						translated = "*" + words[i] + "*";
+					}
+					System.out.print(translated + " ");
+				}
+				System.out.print("\n");
+				
+			}
 		}
 		catch(Exception e){
 			
