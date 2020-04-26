@@ -7,12 +7,12 @@
  * Autores:
 	Hansel López	carné: 19026
 	Martin España 	carné: 19258
- * Última fecha de modificación: 20/04/2020
+ * Última fecha de modificación: 26/04/2020
  * Versión: 1.0
 */
-import java.util.Scanner;
 
 public class Driver{
+	//Metodo principal (main) que funciona como el punto de arranque del sistema
 	public static void main(String[] args){
 		Controller console = new Controller();
 		console.runProgram();
