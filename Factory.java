@@ -23,7 +23,7 @@ public class Factory{
         }
         
         else if(type.equals("SplayTree")){
-            return new SplayTree();
+            return new SplayTreeMapping();
         }
         
         System.out.println("-Se ha ingresado un valor no valido, por favor ingresar de nuevo...");

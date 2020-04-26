@@ -47,7 +47,7 @@ public class Controller{
 							this.createInstance(1);
 						}
 						else if(decision_two == 2){
-							this.createInstance(1);
+							this.createInstance(2);
 						}
 						else{
 							System.out.println("Debe ingresar una implementacion valida ");
