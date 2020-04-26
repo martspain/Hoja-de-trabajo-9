@@ -9,11 +9,11 @@ public class Factory{
         if(type.equals("HashMap")){
             return new Hashing<String,String>();
         }
-        /*
+        
         else if(type.equals("RedBlackTree")){
-            return new RedBlackTree();
+            return new RedBlackTree<String,String>();
         }
-        */
+        
         System.out.println("-Se ha ingresado un valor no valido, por favor ingresar de nuevo...");
         return null;
     }
