@@ -35,6 +35,9 @@ public class Controller{
 				int decision = screen.nextInt();
 				
 				if(decision == 1){
+					
+					System.out.println("");
+					
 					this.readDictionary();
 					
 				}
@@ -67,22 +70,27 @@ public class Controller{
 				String translation = "";
 				String[] words;
 				
-				if(!(line.indexOf("#") == 0) && !(line.indexOf("	") == 0)){ //Se verifica que la palabra no empieze con # (que son comentarios) y que no sea una linea vacia
-					words = line.split(" ");
+				if(!(line.indexOf("#") == 0) && !(line.indexOf(" ") == 0)){ //Se verifica que la palabra no empieze con # (que son comentarios) y que no sea una linea vacia
+					words = line.split("	");
 					english = words[0];
-					/*
+					
 					if(words[1].indexOf(",") >= 0){
 						translation = words[1].substring(0,words[1].indexOf(","));
 					}
-					*/
+					else if(words[1].indexOf("(") >= 0){
+						translation = words[1].substring(0,words[1].indexOf("("));
+					}
+					else if(words[1].indexOf("[") >= 0){
+						translation = words[1].substring(0,words[1].indexOf("["));
+					}
+					else{
+						translation = words[1];
+					}
 					
 				}
 				
-				System.out.println(english);
-				
-				//Association pair = new Association(*key , *value); //*
-				
-				//this.saveWord(pair);
+				Association pair = new Association(english, translation);
+				this.saveWord(pair);
 			}
 		}
 		catch(Exception e){
