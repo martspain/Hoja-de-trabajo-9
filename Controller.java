@@ -47,19 +47,19 @@ public class Controller{
 							this.createInstance(1);
 						}
 						else if(decision_two == 2){
-							this.createInstance(2);
+							this.createInstance(1);
 						}
 						else{
 							System.out.println("Debe ingresar una implementacion valida ");
 						}
 						
-						long startTime = System.nanoTime();
+						//long startTime = System.nanoTime();
 						
 						this.readDictionary(); //Esto lee el archivo de texto y guarda las palabras en la implementacion seleccionada (HashMap tree por default)
 						
-						long endTime = System.nanoTime();
+						//long endTime = System.nanoTime();
 						
-						long elapsedTime = endTime - startTime;
+						//long elapsedTime = endTime - startTime;
 						
 						System.out.println("Tiempo transcurrido: " + elapsedTime);
 						
@@ -175,7 +175,7 @@ public class Controller{
 		}
 	}
 	
-	//Metodo para crear la instancia solicitada
+	//Metodo para crear la instancia solicitada a través del modelo de Factory
 	public void createInstance(int flag){
 		Factory creator = new Factory();
 		if(flag == 1){ //Se utiliza hash map
