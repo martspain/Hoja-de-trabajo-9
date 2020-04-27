@@ -61,7 +61,7 @@ public class Controller{
 						
 						//long elapsedTime = endTime - startTime;
 						
-						System.out.println("Tiempo transcurrido: " + elapsedTime);
+						//System.out.println("Tiempo transcurrido: " + elapsedTime);
 						
 						this.readTranslation(); //Esto traduce la informacion utilizando el tree implementado y muestra el resultado en pantalla
 						
